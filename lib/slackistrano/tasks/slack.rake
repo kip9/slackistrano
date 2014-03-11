@@ -4,9 +4,9 @@ namespace :slack do
       run_locally do
         text = "#{ENV['USER'] || ENV['USERNAME']} has started deploying branch #{fetch :branch} of #{fetch :application} to #{fetch :stage, 'unknown stage'}."
         Slackistrano.post(
-          team: fetch(:slack_team),
-          token: fetch(:slack_token),
-          payload: {
+          fetch(:slack_team),
+          fetch(:slack_token),
+          {
             channel: fetch(:slack_channel),
             username: fetch(:slack_username),
             icon_url: fetch(:slack_icon_url),
@@ -20,9 +20,9 @@ namespace :slack do
       run_locally do
         text = "#{ENV['USER'] || ENV['USERNAME']} has finished deploying branch #{fetch :branch} of #{fetch :application} to #{fetch :stage, 'unknown stage'}."
         Slackistrano.post(
-          team: fetch(:slack_team),
-          token: fetch(:slack_token),
-          payload: {
+          fetch(:slack_team),
+          fetch(:slack_token),
+          {
             channel: fetch(:slack_channel),
             username: fetch(:slack_username),
             icon_url: fetch(:slack_icon_url),
