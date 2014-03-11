@@ -1,12 +1,10 @@
 # Slackistrano
 
-[![Gem Version](https://badge.fury.io/rb/slackistrano.png)](http://badge.fury.io/rb/slackistrano)
-[![Code Climate](https://codeclimate.com/github/supremegolf/slackistrano.png)](https://codeclimate.com/github/supremegolf/slackistrano)
-[![Build Status](https://travis-ci.org/supremegolf/slackistrano.png?branch=master)](https://travis-ci.org/supremegolf/slackistrano)
-
 Send notifications to [Slack](https://slack.com) about [Capistrano](http://www.capistranorb.com) deployments.
 
 If you need Capistrano v2 support, check out [capistrano-slack](https://github.com/j-mcnally/capistrano-slack).
+
+If's fork of https://github.com/supremegolf/slackistrano supporting ruby 1.9.3 (original version did not work with Ruby < 2.0.0 for me)
 
 ## Requirements
 
@@ -18,7 +16,7 @@ If you need Capistrano v2 support, check out [capistrano-slack](https://github.c
 
 Add this line to your application's Gemfile:
 
-    gem 'slackistrano', require: false
+gem 'slackistrano', :require=> false, :git => 'git@github.com:kip9/slackistrano.git', :branch => 'master'
 
 And then execute:
 
@@ -53,12 +51,6 @@ Test your setup by running:
 
 Deploy your application like normal and you should see messages in the channel
 you specified.
-
-## TODO
-
-- Add tests.
-- Notify about incorrect configuration settings.
-- Notify about unsuccessfull HTTP POSTs.
 
 ## Contributing
 

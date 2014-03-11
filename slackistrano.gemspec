@@ -6,11 +6,11 @@ require 'slackistrano/version'
 Gem::Specification.new do |gem|
   gem.name          = "slackistrano"
   gem.version       = Slackistrano::VERSION
-  gem.authors       = ["Philip Hallstrom"]
-  gem.email         = ["philip@supremegolf.com"]
+  gem.authors       = ["Jakub Jakubiec"]
+  gem.email         = ["kip9@poczta.onet.pl"]
   gem.description   = %q{}
   gem.summary       = %q{}
-  gem.homepage      = "https://github.com/supremegolf/slackistrano"
+  gem.homepage      = "https://github.com/kip9/slackistrano"
   gem.license       = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
