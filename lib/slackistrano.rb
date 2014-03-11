@@ -5,9 +5,13 @@ require 'json'
 load File.expand_path("../slackistrano/tasks/slack.rake", __FILE__)
 
 module Slackistrano
-  def self.post(team: nil, token: nil, payload: {})
+  def self.post(team, token, payload)
     uri = URI("https://#{team}.slack.com/services/hooks/incoming-webhook")
-    res = Net::HTTP.post_form(uri, 'token' => token, 'payload' => payload.to_json)
+    http = Net::HTTP.new(uri.host, 443)
+    http.use_ssl = true
+    request  = Net::HTTP::Post.new(uri.request_uri)
+    request.set_form_data({ 'token' => token, 'payload' => payload.to_json })
+    res = http.request(request)
   rescue => e
     puts "There was an error notifying Slack."
     puts e.inspect
